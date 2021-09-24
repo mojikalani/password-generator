@@ -2,24 +2,65 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  // TODO: Your code to generate a password goes here. Be sure to return a password
-  // string. You will need to change the following two lines of code.
+//storing user selections
+var password= [];
 
-  //Psudo Code 
-//   Storing user selections
-//   Make arrays for lowercase letters, uppercase letters, numbers, and symbols
+//Make arrays for lowercase letters, uppercase letters, numbers, and symbols
+var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
+  "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",]; 
 
-//   -----------Start "pop-up" windows for user confirmations---------
+var lowerCaseLetters =  ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
+"l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-//   confirm upper case letters
-//   confirm lower case letters
-//   confirm numbers
-//   confirm symbols 
-//   if password is empty
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-//   build variable for sorting through user selections 
+var symbols = ["!", "@", "#", "$", "%", "^", "&", "*"];
 
-//   display generated password 
+//--------Start "pop-up" windows for user confirmations--------
+
+//Confirm upper case letters
+if (confirm("Include upper case letters?")) { 
+  //add upper case letters 
+  password = password.concat(upperCaseLetters); 
+  console.log(password);
+}
+
+//Confirm lower case letters
+if (confirm("Inlcude lower case letters?")){ 
+  password = password.concat(lowerCaseLetters ); 
+  console.log(password);
+}
+
+//Confirm numbers
+if (confirm("Inlcude numbers?")){ 
+  password = password.concat(numbers); 
+  console.log(password);
+}
+
+//Confirm Symbols
+if (confirm("Include Symbols?")){ 
+  password = password.concat(symbols); 
+  console.log(password);
+}
+
+//if password is empty 
+if (password.length === 0 ){ 
+  alert("You must choose one option!")
+  return generatePassword(); 
+}
+
+//Function for getting random elements 
+
+//Build variable for sorting through user selections
+  // for ( var i =0; i > 5; i++){    
+    
+  // //Display generated password
+  
+
+  // };
+  
+  var passPick = password[Math.floor(Math.random() * password.length)]
+ return passPick; 
 }
 
 // Write password to the #password input
