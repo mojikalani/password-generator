@@ -8,10 +8,10 @@ function generatePassword() {
   //storing user array length
   function userCharacters(){
     
-    userLength = prompt("How many characters for password? "); 
+    userLength = prompt("Enter password length betweeen 8 and 128 "); 
     
-    if (userLength < 8 || userLength > 27){ 
-      alert("invalid length, please choose between 8 and 27");
+    if (userLength < 8 || userLength > 128){ 
+      alert("invalid length, please choose between 8 and 128");
       userCharacters();
       }
       
@@ -32,6 +32,7 @@ function generatePassword() {
 
   var userPassword= [];
 
+  var finalPass = "";
   //--------Start "pop-up" windows for user confirmations--------
 
   //Confirm upper case letters
@@ -68,18 +69,17 @@ function generatePassword() {
   //Function for getting random elements 
   
   //Build variable for sorting through user selections
-    //var length= userCharacters(); 
+   
     
      for ( var i =0; i < userLength; i++){    
       
-      var finalPass = userPassword[Math.floor(Math.random() * userPassword.length)];
+      finalPass += userPassword[Math.floor(Math.random() * userPassword.length)];
       
       console.log(finalPass);
-    };
+    }
     
        return finalPass;
 
-  
  }
 
 
