@@ -8,7 +8,7 @@ function generatePassword() {
   //storing user array length
   function userCharacters(){
     
-    var userLength = prompt("How many characters for password? "); 
+    userLength = prompt("How many characters for password? "); 
     
     if (userLength < 8 || userLength > 27){ 
       alert("invalid length, please choose between 8 and 27");
@@ -70,20 +70,15 @@ function generatePassword() {
   //Build variable for sorting through user selections
     //var length= userCharacters(); 
     
-     for ( var i =0; i < 7; i++){    
+     for ( var i =0; i < userLength; i++){    
       
-      var passPick = userPassword[Math.floor(Math.random() * userPassword.length)];
-     
-      console.log(passPick);
-       };
+      var finalPass = userPassword[Math.floor(Math.random() * userPassword.length)];
+      
+      console.log(finalPass);
+    };
+    
+       return finalPass;
 
-       return passPick;
-  //     var userPass = [];
-  //     userPass.concat(passPick);
-  //     //Display generated password
-  //     //------- for reference ----- 
-  //  writePassword(userPass);
-  
   
  }
 
